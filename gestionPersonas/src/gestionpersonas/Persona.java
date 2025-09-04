@@ -13,17 +13,21 @@ public class Persona {
     private int edad;
     private double altura;
     private boolean casado;
+    private Genero genero;
 
     public Persona() {
     }
 
-    public Persona(String rut, String nombre, int edad, double altura, boolean casado) {
+    public Persona(String rut, String nombre, int edad, double altura, boolean casado, Genero genero) {
         this.rut = rut;
         this.nombre = nombre;
         this.edad = edad;
         this.altura = altura;
         this.casado = casado;
+        this.genero = genero;
     }
+
+
 
     public String getRut() {
         return rut;
@@ -65,10 +69,30 @@ public class Persona {
         this.casado = casado;
     }
 
+    public boolean isCasado() {
+        return casado;
+    }
+
+    public void setCasado(boolean casado) {
+        this.casado = casado;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
     @Override
     public String toString() {
-        return "Persona{" + "rut=" + rut + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", casado=" + casado + '}';
+        return "Persona{" + "rut=" + rut + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", casado=" + casado + ", genero=" + genero + '}';
     }
+    
+    
+
+
     
     
     
