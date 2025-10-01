@@ -62,9 +62,31 @@ public class Docente extends Persona{
     }
 
 
-    public void robar(){
+    public void probar(){
         super.saludar();
         System.out.println(super.sumar(10,10));
     }
     
+    
+    
+    public int sumar(){
+        return 1 +2;
+    }
+    
+    public int sumar(int n1, int n2){
+        return n1 + n2;
+    }
+
+    @Override
+    public String toString() {
+        return "Docente{" + "fechaEgreso=" + fechaEgreso + ", sueldo=" + sueldo + ", titulo=" + titulo + '}';
+    }
+    
+    
+    
+    
+    @Override
+    public void saludar(){
+        System.out.println("Hola soy un profe");
+    }
 }
