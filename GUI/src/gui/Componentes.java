@@ -16,6 +16,9 @@ public class Componentes extends javax.swing.JFrame {
     public Componentes() {
         initComponents();
         cargarComboColores();
+        rbtnAzul.setSelected(true);
+        rbtnAzul.setActionCommand("Azul");
+        rbtnRojo.setActionCommand("Rojo");
     }
 
     /**
@@ -27,6 +30,7 @@ public class Componentes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btngColores = new javax.swing.ButtonGroup();
         btnVolver = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
@@ -40,6 +44,8 @@ public class Componentes extends javax.swing.JFrame {
         cboColores = new javax.swing.JComboBox<>();
         lblValorNombre = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        rbtnRojo = new javax.swing.JRadioButton();
+        rbtnAzul = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +83,12 @@ public class Componentes extends javax.swing.JFrame {
 
         jLabel2.setText("Valor nombre:");
 
+        btngColores.add(rbtnRojo);
+        rbtnRojo.setText("Rojo");
+
+        btngColores.add(rbtnAzul);
+        rbtnAzul.setText("Azul");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,14 +99,6 @@ public class Componentes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnVolver)
                 .addGap(51, 51, 51))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(cboColores, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(205, 205, 205)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblValorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -115,6 +119,19 @@ public class Componentes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rbtnRojo)
+                        .addGap(26, 26, 26)
+                        .addComponent(rbtnAzul))
+                    .addComponent(cboColores, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(205, 205, 205)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblValorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +164,11 @@ public class Componentes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2)))
-                .addGap(68, 68, 68)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnRojo)
+                    .addComponent(rbtnAzul))
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnAceptar))
@@ -171,6 +192,7 @@ public class Componentes extends javax.swing.JFrame {
         System.out.println("Valor comentarios: " + this.txtaComentarios.getText());
         System.out.println("Valor comboBox: " + this.cboColores.getSelectedItem());
         lblValorNombre.setText(txtNombre.getText());
+        System.out.println("Valor radio button: " + btngColores.getSelection().getActionCommand());
     }//GEN-LAST:event_mostrarResultadosComponentes
 
     
@@ -220,6 +242,7 @@ public class Componentes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnVolver;
+    private javax.swing.ButtonGroup btngColores;
     private javax.swing.JComboBox<String> cboColores;
     private javax.swing.JCheckBox chbOpcionDos;
     private javax.swing.JCheckBox chbOpcionUno;
@@ -229,6 +252,8 @@ public class Componentes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblValorNombre;
+    private javax.swing.JRadioButton rbtnAzul;
+    private javax.swing.JRadioButton rbtnRojo;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextArea txtaComentarios;
     // End of variables declaration//GEN-END:variables
