@@ -72,6 +72,9 @@ public class Menu extends javax.swing.JFrame {
     private void navegarComponentes(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navegarComponentes
         // TODO add your handling code here:
         System.out.println("1111");
+        Componentes c = new Componentes();
+        c.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_navegarComponentes
 
     /**
