@@ -6,6 +6,7 @@ package db;
 
 import bd.Conexion;
 import controller.VehiculoController;
+import views.ListarVehiculos;
 
 /**
  *
@@ -22,9 +23,13 @@ public class BD {
 //        Conexion cx = new Conexion();
 //        cx.conectar();
 
-        VehiculoController vc = new VehiculoController();
+//        VehiculoController vc = new VehiculoController();
         
-        System.out.println(vc.listarVehiculos());
+        //System.out.println(vc.listarVehiculos());
+        
+        
+        ListarVehiculos l = new ListarVehiculos();
+        l.setVisible(true);
     }
     
 }

@@ -20,7 +20,7 @@ public class Conexion {
     String port = "3306";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + bd;
     String user = "root";
-    String pass = "";
+    String pass = "system";
     String driver = "com.mysql.cj.jdbc.Driver";
     
     

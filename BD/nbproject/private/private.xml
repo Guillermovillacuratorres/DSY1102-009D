@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Cetecom/Documents/NetBeansProjects/BD/src/db/BD.java</file>
-            <file>file:/C:/Users/Cetecom/Documents/NetBeansProjects/BD/src/bd/Conexion.java</file>
-            <file>file:/C:/Users/Cetecom/Documents/NetBeansProjects/BD/src/controller/VehiculoController.java</file>
-            <file>file:/C:/Users/Cetecom/Documents/NetBeansProjects/BD/src/models/Vehiculo.java</file>
+            <file>file:/C:/Users/Cetecom/Desktop/DSY1102-009D/BD/src/db/BD.java</file>
+            <file>file:/C:/Users/Cetecom/Desktop/DSY1102-009D/BD/src/views/ListarVehiculos.java</file>
+            <file>file:/C:/Users/Cetecom/Desktop/DSY1102-009D/BD/src/views/AgregarVehiculo.java</file>
+            <file>file:/C:/Users/Cetecom/Desktop/DSY1102-009D/BD/src/controller/VehiculoController.java</file>
         </group>
     </open-files>
 </project-private>

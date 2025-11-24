@@ -8,7 +8,9 @@ import bd.Conexion;
 import java.util.List;
 import models.Vehiculo;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -46,5 +48,24 @@ public class VehiculoController {
         return autos;
     }
     
+    
+    
+    
+    public void agregarVehiculo(String patente, String marca, String modelo, Date fecha){
+        
+        String query = "INSERT INTO vehiculo (patente, marca, modelo, fecha) VALUES (?,?,?,?);";
+        
+        try {
+            PreparedStatement st = cx.getConnection().prepareStatement(query);
+            st.setString(1, patente);
+            st.setString(2, marca);
+            st.setString(3, modelo);
+            st.setDate(4, new java.sql.Date(fecha.getTime()));
+            st.executeUpdate();
+            System.out.println("Vehiculo agregado");
+        } catch (Exception e) {
+            System.out.println("Error al agregar vehiculo: " + e.getMessage());
+        }
+    }
     
 }
