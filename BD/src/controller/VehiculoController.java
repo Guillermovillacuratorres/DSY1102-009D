@@ -5,10 +5,13 @@
 package controller;
 
 import bd.Conexion;
+
 import java.util.List;
 import models.Vehiculo;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -65,6 +68,75 @@ public class VehiculoController {
             System.out.println("Vehiculo agregado");
         } catch (Exception e) {
             System.out.println("Error al agregar vehiculo: " + e.getMessage());
+        }
+    }
+    
+    
+    public Vehiculo buscarAuto(String patente){
+        String query = "SELECT * FROM vehiculo WHERE patente = '" + patente + "';";
+        System.out.println(query);
+        
+        try {
+            ResultSet rs = cx.EjecutarQuery(query);
+            
+            while(rs.next()){
+                 Vehiculo v = new Vehiculo(
+                    rs.getString("patente"),
+                    rs.getString("marca"),
+                    rs.getString("modelo"),
+                    rs.getDate("fecha")
+                );
+                return v;
+            }
+            
+            
+        } catch (Exception e) {
+            System.out.println("Error al buscar: " + e.getMessage());
+        }
+        return null;
+    }
+    
+    
+    public void actualizarVehiculo(Vehiculo v){
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+         String fechaFormateada = sdf.format(v.getFecha());
+        
+        String query = "UPDATE vehiculo SET marca = '" + v.getMarca() 
+                + "', modelo = " + "'" + v.getModelo() + "'," + "fecha = '" + fechaFormateada+  "'" + 
+                " WHERE patente = '" + v.getPatente() + "';"  ;
+        
+        System.out.println("FECHA ACTUAL  --> " + fechaFormateada );
+        System.out.println("1111" + query);
+        
+        try {
+            
+            if(buscarAuto(v.getPatente()) == null){
+                System.out.println("Auto no encontrado");
+            }else{
+                Statement st = cx.getConnection().createStatement();
+                st.executeUpdate(query);
+                System.out.println("Vehiculo actualizado");
+            }
+     
+        } catch (Exception e) {
+            System.out.println("Error al actulizar vehiculo: " + e.getMessage());
+        }
+    }
+    
+    public void eliminarVehiculo(String patente){
+        String query = "DELETE FROM vehiculo WHERE patente = '" + patente + "';";
+        System.out.println(query);
+        
+        try {
+            if(buscarAuto(patente) == null){
+                System.out.println("Auto no encontrado");
+            }else{
+                  Statement st = cx.getConnection().createStatement();
+                  st.executeUpdate(query);
+                  System.out.println("Auto eliminado!!");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al eliminar: " + e.getMessage());
         }
     }
     

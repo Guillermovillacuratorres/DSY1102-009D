@@ -88,6 +88,11 @@ public class ListarVehiculos extends javax.swing.JFrame {
         btnVolver.setText("Volver");
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscar(evt);
+            }
+        });
 
         btnAgregar.setText("Agregar ");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +148,13 @@ public class ListarVehiculos extends javax.swing.JFrame {
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarVehicvulo
+
+    private void buscar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscar
+        // TODO add your handling code here:.
+        BuscarVehiculo b = new BuscarVehiculo();
+        b.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buscar
 
     /**
      * @param args the command line arguments
